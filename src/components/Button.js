@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Button = () => {
-  return <React.Fragment>This is the Button component!</React.Fragment>;
+const Button = (props) => {
+  return <button onClick={props.action}>{props.buttonName}</button>;
 };
 
 export default Button;
