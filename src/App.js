@@ -1,6 +1,14 @@
 import React, { useRef } from 'react';
+import { Reset } from 'styled-reset';
 import Header from './components/Header';
 import Button from './components/Button';
+import styled from 'styled-components';
+
+const Body = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: gray;
+`;
 
 function App() {
   let seconds = 0;
@@ -39,7 +47,8 @@ function App() {
     }
   };
   return (
-    <div>
+    <Body>
+      <Reset />
       <Header />
       <p>
         <span id='seconds' ref={appendSeconds}>
@@ -55,7 +64,7 @@ function App() {
         <Button buttonName='Stop Timer' action={buttonStop} />
         <Button buttonName='Clear Timer' action={buttonClear} />
       </div>
-    </div>
+    </Body>
   );
 }
 
