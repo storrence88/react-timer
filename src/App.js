@@ -4,10 +4,26 @@ import Header from './components/Header';
 import Button from './components/Button';
 import styled from 'styled-components';
 
+const Wrapper = styled.div`
+  width: 800px;
+  margin: 0 auto;
+  padding-top: 30px;
+  text-align: center;
+`;
+
 const Body = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: gray;
+  background-color: orange;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+`;
+
+const Timer = styled.p`
+  font-size: 2rem;
+  font-weight: 100;
+  margin-top: 30px;
+  margin-bottom: 30px;
 `;
 
 function App() {
@@ -48,22 +64,22 @@ function App() {
   };
   return (
     <Body>
-      <Reset />
-      <Header />
-      <p>
-        <span id='seconds' ref={appendSeconds}>
-          00
-        </span>
-        :
-        <span id='tens' ref={appendTens}>
-          00
-        </span>
-      </p>
-      <div>
+      <Wrapper>
+        <Reset />
+        <Header />
+        <Timer>
+          <span id='seconds' ref={appendSeconds}>
+            00
+          </span>
+          :
+          <span id='tens' ref={appendTens}>
+            00
+          </span>
+        </Timer>
         <Button buttonName='Start Timer' action={buttonStart} />
         <Button buttonName='Stop Timer' action={buttonStop} />
         <Button buttonName='Clear Timer' action={buttonClear} />
-      </div>
+      </Wrapper>
     </Body>
   );
 }
